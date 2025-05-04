@@ -3,8 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Biografia</title>
+    <title>Mulheres Moldando a Tecnologia | Inspiração, História e Futuro</title>
+    <!-- Font Awesome CDN para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
     <style>
+      /* Menu hambúrguer */
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 2em;
+        position: absolute;
+        right: 30px;
+        top: 25px;
+        z-index: 1001;
+        cursor: pointer;
+      }
+
       * {
         margin: 0;
         padding: 0;
@@ -12,52 +27,67 @@
       }
 
       body {
-        font-family: Arial, sans-serif;
-        background-color: #fdfdfd;
-        color: #333;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
+        color: #232323;
         line-height: 1.6;
         padding: 0 20px;
+        transition: background 0.5s;
       }
 
       header {
-        background-color: #f8f9fa;
+        background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
         padding: 20px 0;
         text-align: center;
         border-bottom: 1px solid #ddd;
+        color: #fff;
+        box-shadow: 0 2px 8px rgba(99,102,241,0.08);
+        transition: background 0.5s;
       }
 
       header h1 {
         font-size: 2.5em;
         margin-bottom: 10px;
-        color: #2c3e50;
+        color: #fff;
         text-align:center;
+        letter-spacing: 1px;
+        text-shadow: 1px 2px 8px #6366f1a0;
+        transition: color 0.5s;
       }
 
       nav ul {
         list-style: none;
         padding: 0;
         margin-top: 10px;
+        transition: max-height 0.3s ease;
       }
 
       nav ul li {
         display: inline-block;
         margin: 0 15px;
+        transition: margin 0.3s;
       }
 
       nav a {
         text-decoration: none;
-        color: #3498db;
+        color: #fff;
         font-weight: bold;
-        transition: color 0.3s ease;
+        transition: color 0.3s, transform 0.2s;
+        padding: 6px 12px;
+        border-radius: 4px;
       }
 
       nav a:hover {
-        color: #1d6fa5;
+        color: #6366f1;
+        background: #fff;
+        transform: translateY(-2px) scale(1.08);
+        box-shadow: 0 2px 8px #6366f133;
       }
 
       main {
         max-width: 900px;
         margin: 40px auto;
+        padding: 0 10px;
       }
 
       main > figure img {
@@ -90,7 +120,7 @@
       }
 
       h2 {
-        color: #2c3e50;
+        color: #1a1a1a;
         font-size: 1.8em;
         margin-bottom: 15px;
         text-align: center;
@@ -102,7 +132,7 @@
 
       h3 {
         font-size: 1.4em;
-        color: #34495e;
+        color: #1a1a1a;
         margin-bottom: 10px;
         text-align:center;
       }
@@ -110,6 +140,7 @@
       p {
         font-size: 1em;
         margin-top: 10px;
+        color: #232323;
       }
 
       hr {
@@ -145,54 +176,121 @@
 
       form button {
         margin-top: 15px;
-       padding: 10px 20px;
-        background-color: #3498db;
+        padding: 10px 20px;
+        background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
         border: none;
         color: white;
         font-size: 1em;
         border-radius: 5px;
         cursor: pointer;
-        transition: background-color 0.3s ease;
+        box-shadow: 0 2px 8px #6366f133;
+        transition: background 0.3s, transform 0.2s;
       }
 
       form button:hover {
-       background-color: #1d6fa5;
+        background: #fff;
+        color: #6366f1;
+        transform: scale(1.08);
+        box-shadow: 0 4px 16px #6366f155;
       }
 
       footer {
-        background-color: #f8f9fa;
+        background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
         text-align: center;
         padding: 20px 0;
         border-top: 1px solid #ddd;
         margin-top: 40px;
+        color: #fff;
+        box-shadow: 0 -2px 8px rgba(99,102,241,0.08);
+        transition: background 0.5s;
       }
 
       footer ul {
         list-style: none;
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
-        gap: 30px;
+        gap: 24px;
+        padding: 0 10px;
       }
 
       footer li {
-        color: #888;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 1.05em;
+        background: rgba(255,255,255,0.07);
+        border-radius: 24px;
+        padding: 8px 16px;
+        margin: 4px 0;
+        box-shadow: 0 1px 6px #6366f122;
+        transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+      }
+      footer li:hover {
+        background: #fff;
+        color: #6366f1;
+        box-shadow: 0 2px 12px #6366f144;
+        transform: translateY(-2px) scale(1.04);
       }
 
       footer a {
-        color: #3498db;
+        color: inherit;
         text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s, text-shadow 0.3s;
       }
 
       footer a:hover {
-        color: #1d6fa5;
+        color: #6366f1;
+        text-shadow: 0 2px 8px #fff8;
       }
 
       @media (max-width: 600px) {
+        .menu-toggle {
+          display: block;
+        }
+        nav ul {
+          display: none;
+          flex-direction: column;
+          background: #f8f9fa;
+          position: absolute;
+          top: 60px;
+          left: 0;
+          width: 100%;
+          max-height: 0;
+          overflow: hidden;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        nav ul.open {
+          display: flex;
+          max-height: 300px;
+        }
         nav ul li {
           display: block;
-          margin: 10px 0;
+          margin: 15px 0;
+          text-align: center;
         }
-
+        header h1 {
+          font-size: 1.6em;
+        }
+        main {
+          margin: 20px auto;
+          padding: 0 5px;
+        }
+        h2 {
+          font-size: 1.2em;
+        }
+        h3 {
+          font-size: 1em;
+        }
+        p, form input, form textarea, form button {
+          font-size: 0.95em;
+        }
+        figure img {
+          width: 90vw;
+          max-width: 95vw;
+        }
         footer ul {
           flex-direction: column;
           gap: 10px;
@@ -201,10 +299,11 @@
     </style>
   </head>
   <body>
+    <button class="menu-toggle" aria-label="Abrir menu de navegação" onclick="toggleMenu()">☰</button>
     <header>
-      <h1>Biografia</h1>
+      <h1>Mulheres Moldando a Tecnologia</h1>
       <nav>
-        <ul>
+        <ul id="main-menu">
           <li><a href="#about-section">Sobre</a></li>
           <li><a href="#stories-section">Histórias</a></li>
           <li><a href="#contact-section">Contato</a></li>
@@ -215,7 +314,8 @@
       <figure>
         <img
           src="https://lyncas.net/wp-content/uploads/2024/09/mulheres-importantes-na-tecnologia.webp"
-          alt="Grandes Mulheres na tecnologia"
+          alt="Ilustração de várias mulheres diversas representando figuras históricas da tecnologia, simbolizando inclusão e inovação."
+          loading="lazy"
         />
         <figcaption>Grandes Mulheres na Tecnologia</figcaption>
       </figure>
@@ -223,12 +323,9 @@
         <h2>Sobre</h2>
         <article>
           <p>
-            Seja na programação, no desenvolvimento de produtos ou na criação
-            de inovações, as mulheres tiveram e ainda têm um papel essencial na
-            história da tecnologia. E mesmo que ainda seja uma indústria que
-            carrega uma carga masculina tão forte, existem mulheres importantes
-            na tecnologia que fizeram história no passado, com forte influência
-            no presente.
+            Bem-vindo(a) ao <strong>Mulheres Moldando a Tecnologia</strong>! Este espaço é dedicado a celebrar, inspirar e dar visibilidade às mulheres que fizeram – e fazem – história no universo tecnológico. Aqui você encontra biografias, curiosidades e conquistas de pioneiras e inovadoras que desafiaram barreiras, romperam preconceitos e abriram caminhos para novas gerações.<br><br>
+            Nosso objetivo é mostrar que tecnologia é para todas as pessoas, independentemente de gênero, cor ou origem. Ao compartilhar essas trajetórias, queremos incentivar meninas e mulheres a sonharem alto, acreditarem em seu potencial e ocuparem cada vez mais espaços na ciência, engenharia, computação e inovação.<br><br>
+            Navegue pelas histórias, inspire-se com exemplos reais e descubra como a diversidade transforma o mundo digital. Junte-se a nós nessa revolução de conhecimento, representatividade e empoderamento!
           </p>
         </article>
       </section>
@@ -239,14 +336,64 @@
           <figure>
             <img
               src="https://s2-techtudo.glbimg.com/7YOBBhghbMF9wsUuBP7UcUh2yXI=/0x342:2439x2307/1008x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2021/n/3/FbrmyhQneVYWGUPIe8vA/adalovelace.jpg"
-              alt="Ada Lovelace"
+              alt="Retrato de Ada Lovelace, considerada a primeira programadora da história, com roupas do século XIX."
+              loading="lazy"
             />
             <figcaption>Ada Lovelace</figcaption>
           </figure>
           <p>
             Foi a primeira pessoa a criar um programa computacional. Durante o
             século XIX, ela analisava e traduzia diversos materiais matemáticos
-            e, a partir disso, Lovelace criou o primeiro algoritmo.
+            e, a partir disso, Lovelace criou o primeiro algoritmo.<br>
+            <a href="https://pt.wikipedia.org/wiki/Ada_Lovelace" target="_blank" rel="noopener">Saiba mais</a>
+          </p>
+        </article>
+        <hr />
+        <article>
+          <h3>Radia Perlman</h3>
+          <figure>
+            <img
+              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEix-3XiOQtYlBmhjQtDLxYTk-yzopXmMHinLaSJ6sK1IvAeN-4f5WdGNP22SB5E2y0kPh64uNoUrywnGAQd8-yhaT4L2X7Ky9_wUsQKwl5WyEM6uA4Yo7A-ET-UJMwQ5qQdPhdTf7lEOj0/w1200-h630-p-k-no-nu/radia-perlman-madre-internet-kIWB-U212309126442kOC-644x483%2540MujerHoy.jpg"
+              alt="Radia Perlman, conhecida como a 'mãe da Internet', sorrindo em um evento."
+              loading="lazy"
+            />
+            <figcaption>Radia Perlman</figcaption>
+          </figure>
+          <p>
+            Conhecida como a "mãe da Internet", Radia Perlman inventou o protocolo Spanning Tree, fundamental para o funcionamento das redes modernas. Seu trabalho permitiu que redes de computadores se comunicassem de forma eficiente e segura.<br>
+            <a href="https://pt.wikipedia.org/wiki/Radia_Perlman" target="_blank" rel="noopener">Saiba mais</a>
+          </p>
+        </article>
+        <hr />
+        <article>
+          <h3>Hedy Lamarr</h3>
+          <figure>
+            <img
+              src="https://media.newyorker.com/photos/5a1f13f2f2287d71effeaea4/master/pass/Camhi-Hedy-Lamarr-doc.jpg"
+              alt="Hedy Lamarr, atriz e inventora, em foto de divulgação dos anos 1940."
+              loading="lazy"
+            />
+            <figcaption>Hedy Lamarr</figcaption>
+          </figure>
+          <p>
+            Além de atriz de Hollywood, Hedy Lamarr foi inventora e desenvolveu, junto com George Antheil, uma tecnologia de comunicação por salto de frequência, base para o Wi-Fi, Bluetooth e GPS.<br>
+            <a href="https://pt.wikipedia.org/wiki/Hedy_Lamarr" target="_blank" rel="noopener">Saiba mais</a>
+          </p>
+        </article>
+        <hr />
+        <article>
+          <h3>Enedina Alves Marques</h3>
+          <figure>
+            <img
+              src="https://www.amese.pr.gov.br/sites/ame-se/arquivos_restritos/files/imagem/2024-01/escultura_enedina_cido_marques.jpg"
+              alt="Enedina Alves Marques, primeira engenheira negra do Brasil, em foto histórica."
+              loading="lazy"
+            />
+            <figcaption>Enedina Alves Marques</figcaption>
+          </figure>
+          <p>
+            Primeira engenheira negra do Brasil, Enedina Alves Marques foi pioneira na área de engenharia civil e contribuiu para grandes obras de infraestrutura no Paraná, servindo de inspiração para mulheres negras na ciência e tecnologia.<br>
+            <a href="https://pt.wikipedia.org/wiki/Enedina_Alves_Marques" target="_blank" rel="noopener">Saiba mais</a>
           </p>
         </article>
         <hr />
@@ -255,7 +402,8 @@
           <figure>
             <img
               src="https://clubedovideogame.com.br/app/uploads/2022/09/carol-shaw-premios.jpg"
-              alt="Carol Shaw"
+              alt="Foto de Carol Shaw, pioneira no desenvolvimento de jogos digitais, segurando um prêmio."
+              loading="lazy"
             />
             <figcaption>Carol Shaw</figcaption>
           </figure>
@@ -265,7 +413,8 @@
             a partir dessas aulas que ela descobriu que existiam jogos digitais
             no computador, além de também conhecer a digitação de programas.
             Assim, Carol Shaw foi introduzida ao mundo da tecnologia, por meio
-            da prática de programação.
+            da prática de programação.<br>
+            <a href="https://pt.wikipedia.org/wiki/Carol_Shaw" target="_blank" rel="noopener">Saiba mais</a>
           </p>
         </article>
         <hr />
@@ -274,7 +423,8 @@
           <figure>
             <img
               src="https://blogdaengenharia.com/wp-content/uploads/grace-hopper-blog-da-engenharia-3.jpg"
-              alt="Grace Hopper"
+              alt="Grace Hopper em uniforme da Marinha dos EUA, reconhecida por sua contribuição à programação e ao COBOL."
+              loading="lazy"
             />
             <figcaption>Grace Hopper</figcaption>
           </figure>
@@ -283,7 +433,8 @@
             décadas de 40 e 50, e durante esse tempo desenvolveu a linguagem de
             programação Flow-Matic, que serviu como base para a criação do
             COBOL (Linguagem Comum Orientada para Negócios) – usado até hoje em
-            processamento de bancos de dados comerciais.
+            processamento de bancos de dados comerciais.<br>
+            <a href="https://pt.wikipedia.org/wiki/Grace_Hopper" target="_blank" rel="noopener">Saiba mais</a>
           </p>
         </article>
         <hr />
@@ -291,25 +442,104 @@
       <section id="contact-section">
        <h2>Contato</h2>
        <form action="#" method="post">
+
          <label for="name">Nome:</label><br />
-         <input type="text" id="name" name="name" required /><br /><br />
+         <input type="text" id="name" name="name" required aria-label="Nome" placeholder="Digite seu nome completo" /><br /><br />
 
          <label for="email">Email:</label><br />
-         <input type="email" id="email" name="email" required /><br /><br />
+         <input type="email" id="email" name="email" required aria-label="Email" placeholder="seu@email.com" /><br /><br />
 
          <label for="message">Mensagem:</label><br />
-         <textarea id="message" name="message" rows="5" required></textarea><br /><br />
+         <textarea id="message" name="message" rows="5" required aria-label="Mensagem" placeholder="Digite sua mensagem"></textarea><br /><br />
 
          <button type="submit">Enviar</button>
+         <div id="form-feedback" style="display:none; margin-top:15px; font-weight:bold;"></div>
         </form>
       </section>
     </main>
     <footer>
       <ul>
-        <li>Com amor❤️ Regiane Cabral</li>
-        <li><a href="/about">Sobre</a></li>
-        <li><a href="/blog">Blog</a></li>
+        <li><i class="fa-solid fa-heart" style="color:#f87171"></i> Com amor Regiane Cabral</li>
+        <li><i class="fa-solid fa-circle-info"></i> <a href="/about">Sobre</a></li>
+        <li><i class="fa-solid fa-rss"></i> <a href="/blog">Blog</a></li>
+        <li><i class="fa-brands fa-wikipedia-w"></i> <a href="https://pt.wikipedia.org/wiki/Mulheres_na_computa%C3%A7%C3%A3o" target="_blank" rel="noopener">Mulheres na Computação (Wikipedia)</a></li>
+        <li><i class="fa-solid fa-link"></i> <a href="https://www.cnnbrasil.com.br/tecnologia/8-mulheres-que-fizeram-historia-na-tecnologia/" target="_blank" rel="noopener">8 mulheres que fizeram história na tecnologia (CNN Brasil)</a></li>
+        <li><i class="fa-brands fa-instagram"></i> <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
       </ul>
+      <div style="margin-top:18px;font-size:0.95em;opacity:0.8;letter-spacing:0.5px;">
+        <span style="display:inline-flex;align-items:center;gap:6px;"><i class="fa-solid fa-copyright"></i> 2025 Mulheres Moldando a Tecnologia.</span> Todos os direitos reservados.
+      </div>
     </footer>
   </body>
+</main>
+    <button id="back-to-top" aria-label="Voltar ao topo" style="display:none;position:fixed;bottom:30px;right:30px;z-index:1002;padding:12px 18px;font-size:1.2em;background:#3498db;color:#fff;border:none;border-radius:50px;box-shadow:0 2px 8px rgba(0,0,0,0.12);cursor:pointer;transition:background 0.3s;">↑</button>
+<script>
+  // Feedback visual e validação do formulário
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form');
+    const feedback = document.getElementById('form-feedback');
+    if(form && feedback) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Validação dos campos
+        const nome = document.getElementById('name');
+        const email = document.getElementById('email');
+        const mensagem = document.getElementById('message');
+        let valid = true;
+        let msg = '';
+        if(!nome.value.trim()) {
+          valid = false;
+          msg = 'Por favor, preencha o nome.';
+          nome.focus();
+        } else if(!email.value.trim() || !/^\S+@\S+\.\S+$/.test(email.value)) {
+          valid = false;
+          msg = 'Por favor, insira um e-mail válido.';
+          email.focus();
+        } else if(!mensagem.value.trim()) {
+          valid = false;
+          msg = 'Por favor, escreva sua mensagem.';
+          mensagem.focus();
+        }
+        if(valid) {
+          feedback.style.display = 'block';
+          feedback.style.color = '#27ae60';
+          feedback.textContent = 'Mensagem enviada com sucesso!';
+          form.reset();
+          setTimeout(() => { feedback.style.display = 'none'; }, 4000);
+        } else {
+          feedback.style.display = 'block';
+          feedback.style.color = '#e74c3c';
+          feedback.textContent = msg;
+          setTimeout(() => { feedback.style.display = 'none'; }, 4000);
+        }
+      });
+    }
+  });
+
+  // Botão voltar ao topo
+  const backToTop = document.getElementById('back-to-top');
+  window.addEventListener('scroll', function() {
+    if(window.scrollY > 300) {
+      backToTop.style.display = 'block';
+    } else {
+      backToTop.style.display = 'none';
+    }
+  });
+  backToTop.addEventListener('click', function() {
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+  function toggleMenu() {
+    const menu = document.getElementById('main-menu');
+    menu.classList.toggle('open');
+  }
+  // Fecha o menu ao clicar em um link (mobile)
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('#main-menu a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.getElementById('main-menu').classList.remove('open');
+      });
+    });
+  });
+</script>
 </html>
